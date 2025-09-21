@@ -1,0 +1,33 @@
+{% load static %}   
+
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+  <link rel="stylesheet" href="{% static 'accounts/style.css' %}">
+</head>
+<body>
+  <div class="login-container">
+    
+    <!-- Título principal -->
+    <h1 class="main-title">Ferretería HERRACON</h1>
+
+    <!-- Subtítulo de login -->
+    <h2 class="subtitle">Login Administrador</h2>
+
+    <form method="post">
+      {% csrf_token %}
+      <input name="username" placeholder="Usuario" required>
+      <input name="password" type="password" placeholder="Contraseña" required>
+      <button type="submit">Entrar</button>
+    </form>
+    
+    {% if error %}
+      <p class="error-message">{{ error }}</p>
+    {% endif %}
+  </div>
+</body>
+</html>
+
+
