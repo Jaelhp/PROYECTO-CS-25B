@@ -11,13 +11,16 @@
   <div class="login-container">
     
     <!-- Título principal -->
-    <h1 class="main-title">Ferretería HERRACON</h1>
-
-    <!-- Subtítulo de login -->
-    <h2 class="subtitle">Login Administrador</h2>
+    <h1 class="main-title">FERRETERIA HERRACON</h1>
 
     <form method="post">
-      {% csrf_token %}
+      {% csrf_token %}  
+      <select name="rol" required>
+      <option value="administrador">Administrador</option>
+      <option value="vendedor">Vendedor</option>
+      <option value="caja">Caja</option>
+      </select>
+    
       <input name="username" placeholder="Usuario" required>
       <input name="password" type="password" placeholder="Contraseña" required>
       <button type="submit">Entrar</button>
